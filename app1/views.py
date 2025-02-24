@@ -37,32 +37,6 @@ def cityconnection(request,city_name):
     F=feedback.objects.all()  
     return render(request,'base_cities.html',{'city1':city,'packages':package,'form1':F})
 
-# def cityconnection(request, city_name):
-#     # Get the city and its packages
-#     city = get_object_or_404(Basecitypage, city_name__iexact=city_name)
-#     package = packages.objects.filter(city=city)
-
-#     # Initialize the feedback form
-#     f1 = feedbackForm()
-
-#     # Handle form submission (Global Feedback)
-#     if request.method == 'POST':
-#         f1 = feedbackForm(request.POST)
-#         if f1.is_valid():
-#             f1.save()  # Save company-wide feedback
-#             return redirect('app1:cityconnection', city_name=city_name)
-
-#     # Fetch all company feedback (Global)
-#     feedback_list = feedback.objects.all()
-
-#     return render(request, 'base_cities.html', {
-#         'city1': city,
-#         'packages': package,
-#         'form1': feedback_list,  # Global feedback
-#         'f1': f1  # Feedback form
-#     })
-
-
 
 def package_details(request, package_id):
     package = get_object_or_404(packages, id=package_id)
@@ -71,14 +45,6 @@ def package_details(request, package_id):
         .prefetch_related('packagedetails')
     return render(request, 'package_details.html', {'package': package, 'details': details,'p_categories': p_categories})
 
-
-# def signupView(request):
-#     if request.method=='POST':  
-#         s=signupform(request.POST)
-#         if s.is_valid():
-#             s.save()
-#             return redirect('app1:signup')
-#     return render(request,'signup.html',{'form':signupform()})
 
 def signupView(request):
     r1=signupform()
@@ -93,21 +59,6 @@ def signupView(request):
             login(request, user)
             return redirect('app1:home')
     return render(request,'signup.html',{'form':r1})
-
-# def signinView(request):
-#     f1 = signinform()
-#     if request.method == "POST":
-#         form = signinform(request.POST)
-#         if form.is_valid():
-#             username = form.cleaned_data.get('username')
-#             password = form.cleaned_data.get('password')
-#             user = authenticate(request, username=username, password=password)
-#             if user:
-#                 login(request, user)
-#                 return redirect('app1:contact')
-#             else:
-#                 return render(request, 'signin.html', {'form': f1, 'error': 'Invalid username or password'})
-#     return render(request, 'signin.html', {'form': f1})
 
 
 def signinView(request):
