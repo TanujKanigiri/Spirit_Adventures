@@ -1,0 +1,67 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: url(../static/img/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  /* Container for the login box to be vertically centered */
+  .login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Semi-transparent box for the form */
+  .login-box {
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    background-color:transparent;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.438);
+  }
+
+  /* Eye icon styling */
+  #eye {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+  }
+  #submit{
+    background-color: rgb(9, 188, 9);
+    color: white;
+    font-weight: bold;
+  }
+  #user_name,#password{
+    outline: none;
+    border: 1px solid white;
+    background-color: transparent;
+  }
+  form input::placeholder {
+    color: white !important; /* Your desired color */
+  }
+  #user_login{
+    color: white;
+    text-align: center;
+  }
+  #account{
+    text-align: center;
+    color: white;
+  }
+  #signup,#forgot{
+    text-decoration: none;
+    color: white;
+  }
+  #forgot{
+    padding-left: 35%;
+  }

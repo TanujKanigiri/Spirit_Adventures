@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Get In Touch
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/getintouch.css' %}">
+{% endblock css %}
+
+<!-- BODY -->
+{% block content %}
+<div class="contactus">
+  <div>
+    <h1 class="contactus-main-heading">Get In Touch</h1>
+  </div>
+  <div class="container-card">
+    <div class="cantactus-card">
+      <div class="card1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="contactus-logos"
+          viewBox="0 0 16 16">
+          <path style="color: white;" fill-rule="evenodd"
+            d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+        </svg>
+        <h4 class="card-heading">phone</h4>
+        <p class="card-para">we are just a call away..dial/whatsapp us on below number!</p>
+        <p class="card-number"><a class="getdetails" href="">09980300600</a></p>
+      </div>
+
+      <div class="card1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="contactus-logos"
+          viewBox="0 0 16 16">
+          <path style="color: white;"
+            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+        </svg>
+        <h4 class="card-heading">email</h4>
+        <p class="card-para">Shoot us a mail to plan weekend adventure with us!</p>
+        <p class="card-mail"><a class="getdetails" href="">spiritadventures6@gmail.com</a></p>
+      </div>
+      <div class="card1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="contactus-logos"
+          viewBox="0 0 16 16">
+          <path style="color: white;" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+        </svg>
+        <h4 class="card-heading">Location</h4>
+        <p class="card-para">2nd Floor, above Hotel Vishnu Sri, KPHB 5th Phase,Hyderabad,Telangana</p>
+        <p class="card-map"><a class="getdetails" href="https://www.google.com/maps/place/JSpiders+Hyderabad+JNTU/@17.4832965,78.3889744,844m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bcb91f27c515315:0xb48086bdd1bb34d6!8m2!3d17.4832965!4d78.3915493!16s%2Fg%2F11fylpkytz?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D">View On Google Map</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form action="" method="post">
+  {% csrf_token %}
+  <div class="forms">
+    <div>
+      <h1 class="form-heading" id="fd_txt">Leave us your info</h1>
+      <P class="form-para" id="txt">We will get back to you.</P>
+    </div>
+    <div class="inputs">
+      <div class="form-group">
+        <label for="">Name</label>
+        <input class="name form-control" type="text" name="name" placeholder="Enter Your Name">
+        <label for="">Email</label>
+        <input class="email form-control" type="email" name="email" id="Email" placeholder="Enter Your Email">
+        <label for="">Subject</label>
+        <input class="subject form-control" name="subject" type="text" placeholder="Subject">
+        <label for="">Message</label>
+        <textarea class="message form-control" name="message" id="message" placeholder="Message"></textarea>
+        <input class="btn mt-3  submit" type="submit" value="submit">
+      </div>
+    </div>
+</form>
+</div>
+{% endblock %}

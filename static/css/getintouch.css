@@ -1,0 +1,146 @@
+/* CONTACTUS BODY */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Jersey+10&family=Macondo&family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Jersey+10&family=Macondo&family=Mouse+Memoirs&family=Oswald:wght@200..700&display=swap");
+@font-face {
+  font-family: "neuemachinaregular";
+  src: url(../fonts/NeueMachinaRegular.otf);
+}
+@font-face {
+  font-family: "Rudeee";
+  src: url(../fonts/Rude.ttf);
+}
+@font-face {
+  font-family: art;
+  src: url(../fonts/Archionity.ttf);
+}
+@font-face {
+  font-family: bohemy;
+  src: url(../fonts/Bohemy.otf);
+}
+@font-face {
+  font-family: predicat;
+  src: url(../fonts/Predikat\ Oneday.ttf);
+}
+body {
+  background-color: #1d2955 ;
+  /* background-image: url(../img/beaches.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  backdrop-filter: blur( 0.4557291666666667vw); */
+}
+* {
+  padding: 0%;
+  margin: 0%;
+}
+#main_container2 {
+  background-color: transparent;
+}
+/* .contactus{
+  background-color: #1d2955;
+} */
+.contactus-main-heading {
+  text-align: center;
+  font-family: neuemachinaregular;
+  color: #d8caa7;
+  margin-top: 2.6041666666666665vw;
+  font-size: 4.231770833333333vw;
+}
+.contactus-main-para {
+  font-size: none;
+  text-align: center;
+  font-size:  1.953125vw;
+}
+.cantactus-card {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contactus-logos:hover {
+  transform: translateY(-1.3020833333333333vw);
+  transition: all 1s;
+}
+.card1 {
+  height: 13.020833333333334vw;
+  width: 23.4375vw;
+}
+.card-heading {
+  text-transform: uppercase;
+  color: rgb(255, 123, 0);
+  font-size: 20px;
+  margin-top: 10%;
+}
+
+.card-para {
+  font-size:  1.3020833333333333vw;
+  margin-top: 10%;
+  color: white;
+}
+
+.card-number {
+  font-size:  1.3020833333333333vw;
+  margin-top: 10%;
+}
+
+.card-mail {
+  color: rgb(255, 123, 0);
+  font-size:  1.3020833333333333vw;
+  margin-top: 10%;
+}
+
+.card-map {
+  color: rgb(255, 123, 0);
+  font-size:  1.3020833333333333vw;
+  margin-top: 10%;
+}
+
+.getdetails:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.contactus {
+  margin-bottom: 20%;
+}
+
+/* INFO FORMM */
+
+#txt {
+  text-align: center;
+  color: white;
+}
+
+#fd_txt {
+  text-align: center;
+  color: rgb(255, 123, 0);
+}
+
+.btn {
+  background-color: rgb(255, 123, 0);
+  border-color: white;
+  color: white;
+  width: 32.552083333333336vw;
+  align-items: center;
+}
+
+.btn:hover {
+  background-color: orange;
+  border-color: white;
+}
+.form-group {
+  color: white;
+  width: 32.552083333333336vw;
+  margin-left: 32.552083333333336vw;
+  align-items: center;
+}
+
+
+

@@ -1,0 +1,78 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../img/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#user_signup {
+    color: white;
+}
+
+.signup-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-box {
+    background-color: transparent;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#eye {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+}
+
+form input::placeholder {
+    color: white !important;
+}
+
+#submit {
+    background-color: rgb(9, 188, 9);
+    width: 100%;
+    max-width: 350px;
+    padding: 0.4rem 1.3rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.form-control {
+    outline: none;
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+#account {
+    text-align: center;
+    color: white;
+}
+
+#login {
+    text-decoration: none;
+    color: white;
+}
+.error{
+    text-align: center;
+    color: red;
+}

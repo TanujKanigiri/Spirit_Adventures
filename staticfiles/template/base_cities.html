@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{{city1.city_name}}
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/citypage.css' %}" />
+{% endblock css %}
+{% block content %}
+<h1 id="city">{{ city1.city_name }}</h1>
+<p id="tagline">Take only Memories Leave only Footprints</p>
+<br />
+<div id="container_goa">
+  <div id="left_div">
+    <img src="{{ city1.city_image.url }}" alt="" id="img_1">
+    <p id="info">{{ city1.city_description }}</p>
+  </div>
+  <div id="right_div">
+    <br>
+    <div id="img_div">
+      <img src="{% static 'img/Screenshot 2025-01-23 195635.png' %}" alt="" id="img_3" />
+    </div> <br><br>
+    <h4 id="text">WHERE WE ARE NOW</h4>
+    <div id="map_div">
+      <img src="{{ city1.city_map.url }}" alt="" id="map" />
+    </div>
+  </div>
+</div>
+<br>
+<h1 id="gallery">Beauty Of {{ city1.city_name }}</h1>
+<br>
+<div class="container-package carousel" id="image_div">
+  <div class="wrap">
+    <img src="{{ city1.city_gallery1.url }}" alt="" class="images" />
+    <img src="{{ city1.city_gallery2.url }}" alt="" class="images" />
+    <img src="{{ city1.city_gallery3.url }}" alt="" class="images" />
+    <img src="{{ city1.city_gallery4.url }}" alt="" class="images" />
+    <img src="{{ city1.city_gallery5.url }}" alt="" class="images" />
+  </div>
+</div>
+<br>
+<h1 id="package">Friendly Packages</h1>
+<div class="container-packages cartss">
+  {% for i in packages %}
+  <div class="package-container">
+    <div class="maincart-container item">
+      <div class="img-container">
+        <img src="{{ i.package_image.url }}" alt="" class="img1" />
+      </div>
+      <div class="place-container">
+        <span class="place-info">{{ i.package_name }}</span>
+      </div>
+      <div class="price-container">
+        <span class="actual-price">₹{{ i.full_price }}</span>
+        <br />
+        <span class="price-info" id="dc">₹{{ i.discount_price }}</span>
+      </div>
+      <div class="Availability-container">
+        <img src="{% static 'img/calender.png' %}" alt="" class="date-img" />
+        <span id="avail">Availability : <span>{{ i.Availability }}</span> </span><br />
+        <img src="{% static 'img/clock.png' %}" alt="" class="date-img" />
+        <span id="no">{{ i.no_of_days }}</span>
+      </div>
+    </div>
+    <a href="{% url 'app1:package_details' package_id=i.id %}" class="btn submit_button" id="vd_txt">
+      View Details
+    </a>
+
+
+  </div>
+  {% endfor %}
+</div>
+<div id="review_div">
+  <h1>Reviews</h1> <br>
+  <div>
+    <form action="" method="post" id="form1">
+      {% csrf_token %} {% for i in form1 %}
+      <div>
+        <h2>{{i.name}}</h2>
+        <h4>{{i.feedback}}</h4>
+      </div>
+      {% endfor %}
+    </form>
+  </div>
+</div>
+<div class="container" id="fd_div">
+  <h2 class="text-center" id="fd_txt">We Value Your Feedback</h2>
+  <form method="post" id="feedbackForm">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter your name" required name="name" />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter your email" required name="email" />
+    </div>
+    <div class="form-group">
+      <label for="feedback">Feedback</label>
+      <textarea class="form-control" id="feedback" rows="4" placeholder="Your feedback" required
+        name="feedback"></textarea>
+    </div>
+    <input type="submit" class="btn btn-primary btn-block" value="Submit" />
+  </form>
+  <div id="responseMessage" class="mt-3 text-center"></div>
+</div>
+
+{% endblock %}

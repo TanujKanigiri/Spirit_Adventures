@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if package %}Edit{% else %}Add{% endif %} Package</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        /* Dark Theme Styles */
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            margin-top: 50px;
+            max-width: 600px;
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #f8f9fa;
+        }
+
+        label {
+            font-weight: bold;
+            color: #ccc;
+            margin-bottom: 5px;
+        }
+
+        /* Improved Input Box Styling */
+        .form-control {
+            background-color: #2a2a2a;
+            color: white;
+            border: 2px solid #444;
+            border-radius: 8px;
+            padding: 12px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control:focus {
+            background-color: #333;
+            color: white;
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
+            transform: scale(1.02);
+        }
+
+        /* Dropdown Styling */
+        select.form-control {
+            appearance: none;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/271/271228.png');
+            background-position: right 12px center;
+            background-repeat: no-repeat;
+            background-size: 18px;
+            padding-right: 35px;
+        }
+
+        .btn-success {
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn-secondary {
+            background-color: grey;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>{% if package %}Edit{% else %}Add{% endif %} Package</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {{ form.as_p }}  
+
+            <button type="submit" class="btn btn-success">Save Package</button>
+            <a href="{% url 'custom_admin:package_list' %}" class="btn btn-secondary">Back to Packages</a>
+        </form>
+    </div>
+
+</body>
+
+</html>

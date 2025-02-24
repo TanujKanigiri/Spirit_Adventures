@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contactdetails.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<div class="form-container">
+    <h2 class="form-title">Book Your Trip</h2>
+
+    <!-- ✅ Display Success Message -->
+    {% if success_message %}
+        <div class="alert alert-success">
+            {{ success_message }}
+        </div>
+    {% endif %}
+
+    <form method="post" class="contact-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" name="first_name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" name="last_name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Phone *</label>
+            <input type="tel" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label>Address *</label>
+            <textarea name="address" required></textarea>
+        </div>
+        <input type="hidden" name="package" value="{{ package.id }}">
+
+        <button type="submit" class="btn-submit">Confirm Booking</button>
+    </form>
+</div>
+
+{% endblock %}
