@@ -35,6 +35,9 @@ body {
   padding: 0%;
   margin: 0%;
 }
+.contactus{
+  height: fit-content;
+}
 #main_container2 {
   background-color: transparent;
 }
