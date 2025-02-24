@@ -5,10 +5,13 @@
         "src": "spiritproject/wsgi.py",
         "use": "@vercel/python",
         "config": {
-          "maxLambdaSize": "15mb",
+          "maxLambdaSize": "250mb",
           "runtime": "python3.9"
+          
         }
+        
       },
+      
       {
         "src": "build_files.sh",
         "use": "@vercel/static-build",
