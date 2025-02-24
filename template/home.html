@@ -53,9 +53,6 @@
       <li class="items" id="getintouch_item">
         <a class="anavbar" href="{% url 'app1:getintouch' %}">Get In Touch</a>
       </li>
-      <!-- <li class="items" id="login_item">
-        <a class="anavbar" href="{% url 'app1:signin' %}">Login</a>
-      </li> -->
       {% if user.is_authenticated %}
       <li class="items">
         <a class="anavbar" href="{% url 'app1:logout' %}">
