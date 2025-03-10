@@ -99,6 +99,12 @@ DATABASES = {
         'PASSWORD': 'SuViBtWsEAJbrPfNuzhLiSvhEezUVJKF',
         'HOST': 'hopper.proxy.rlwy.net',
         'PORT': '56365',
+        'OPTIONS': {
+            'init_command': "SET SESSION wait_timeout=31536000",  
+            'autocommit': True,
+            'connect_timeout': 60,  
+        },
+        'CONN_MAX_AGE': None, 
     }
 }
 
