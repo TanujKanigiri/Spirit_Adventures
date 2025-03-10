@@ -102,11 +102,12 @@ DATABASES = {
         'OPTIONS': {
             'init_command': "SET SESSION wait_timeout=31536000",  
             'autocommit': True,
-            'connect_timeout': 60,  
+            'connect_timeout': 300,  # Increased timeout
         },
-        'CONN_MAX_AGE': None, 
+        'CONN_MAX_AGE': 600,  # Keep the connection alive longer
     }
 }
+
 
 
 
