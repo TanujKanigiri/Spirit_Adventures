@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 
 import os
-import pymysql
-pymysql.install_as_MySQLdb()
+
 
 from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,10 +27,9 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 SECRET_KEY = 'django-insecure-6)i003dzks4b@-&pms)x4_ne)h*#8zm^!w&j)tmi&(ovv^h%t-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['spiritadventures.onrender.com']
 
 # Application definition
 
@@ -90,26 +88,24 @@ WSGI_APPLICATION = 'spiritproject.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'railway',
+#         'USER': 'root',
+#         'PASSWORD': 'SuViBtWsEAJbrPfNuzhLiSvhEezUVJKF',
+#         'HOST': 'hopper.proxy.rlwy.net',
+#         'PORT': '56365',
+#     }
+# }
+import dj_database_url
+import os
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'USER': 'root',
-        'PASSWORD': 'SuViBtWsEAJbrPfNuzhLiSvhEezUVJKF',
-        'HOST': 'hopper.proxy.rlwy.net',
-        'PORT': '56365',
-        'OPTIONS': {
-            'init_command': "SET SESSION wait_timeout=31536000",  
-            'autocommit': True,
-            'connect_timeout': 300,  # Increased timeout
-        },
-        'CONN_MAX_AGE': 600,  # Keep the connection alive longer
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL')
+    )
 }
-
-
-
 
 
 # Password validation
